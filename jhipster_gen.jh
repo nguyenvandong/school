@@ -1,0 +1,85 @@
+entity Attendance{
+	id Long,
+  	dateAttendance LocalDate,
+    reason String maxlength(200)
+}
+
+entity Classes{
+	id Long,
+    numOfStudent Integer,
+  	name String maxlength(200),
+  	capacity Integer,
+ 	location String maxlength(200),
+  	sDate LocalDate,
+  	eDate LocalDate
+}
+
+entity Student{
+	id Long,
+	firstName String maxlength(50),
+	midleName String maxlength(50),
+	lastName String maxlength(50),
+	dateOfBirth LocalDate ,
+	gender String maxlength(10),
+	dateOfJoin LocalDate
+}
+
+entity Parents{
+	id Long,
+    firstName String maxlength(50),
+	midleName String maxlength(50),
+	lastName String maxlength(50),
+    dateOfBirth LocalDate,
+	gender String maxlength(10),
+	address String maxlength(200),
+	phoneNumber String maxlength(20),
+    relation String maxlength(200)
+}
+
+entity Teacher{
+	tid Long,
+	firstName String maxlength(50),
+	middleName String maxlength(50),
+	lastName String maxlength(50),
+	gender String maxlength(10)
+	address String maxlength(200),
+	dateOfBirth LocalDate ,
+	dateOfJoin LocalDate ,
+	dateOfLeaving LocalDate ,
+	phoneNumber String maxlength(10),
+	qualification String maxlength(200),
+}
+
+entity TeacherClass{
+	id Long
+}
+
+entity StudentClass{
+	id Long
+}
+
+entity TeacherAttendance{
+  	id Long,
+    dateAttendance LocalDate,
+  	reason String maxlength(200)
+}
+
+relationship OneToMany {
+	Student to StudentClass{studentId}
+    Student to Attendance{studentId}
+    Student to Parents{studentId}
+    Teacher to TeacherClass{teacherId}
+    Teacher to TeacherAttendance{teacherId}
+    Classes to TeacherClass{classId}
+    Classes to Attendance{classId}
+    Classes to StudentClass{classId}
+}
+
+paginate * with pagination
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+// Set an angular suffix
+angularSuffix * with mySuffix
