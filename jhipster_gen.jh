@@ -51,11 +51,13 @@ entity Teacher{
 }
 
 entity TeacherClass{
-	id Long
+	teacherId Long,
+	classId Long
 }
 
 entity StudentClass{
-	id Long
+	studentId Long,
+	classId Long
 }
 
 entity TeacherAttendance{
@@ -64,16 +66,20 @@ entity TeacherAttendance{
   	reason String maxlength(200)
 }
 
-relationship OneToMany {
-	Student to StudentClass{studentId}
-    Student to Attendance{studentId}
-    Student to Parents{studentId}
-    Teacher to TeacherClass{teacherId}
-    Teacher to TeacherAttendance{teacherId}
-    Classes to TeacherClass{classId}
-    Classes to Attendance{classId}
-    Classes to StudentClass{classId}
+relationship ManyToOne {
+    TeacherAttendance{teacherId} to Teacher
 }
+
+//relationship OneToMany {
+// 	Student to StudentClass{studentId}
+//    Student to Attendance{studentId}
+//    Student to Parents{studentId}
+//    Teacher to TeacherClass{teacherId}
+//    Teacher to TeacherAttendance{teacherId}
+//    Classes to TeacherClass{classId}
+//    Classes to Attendance{classId}
+//    Classes to StudentClass{classId}
+//}
 
 paginate * with pagination
 
