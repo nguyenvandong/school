@@ -1,0 +1,29 @@
+
+{
+    "schoolApp": {
+        "parents" : {
+            "home": {
+                "title": "Parents",
+                "createLabel": "Thêm mới một Parents",
+                "createOrEditLabel": "Thêm mới hoặc cập nhật Parents"
+            },
+            "created": "Một Parents mới được tạo với định danh {{ param }}",
+            "updated": "Một Parents cập nhật với định danh {{ param }}",
+            "deleted": "Một Parents đã xóa với định danh {{ param }}",
+            "delete": {
+                "question": "Bạn có chắc là muốn xóa Parents {{ id }}?"
+            },
+            "detail": {
+                "title": "Parents"
+            },
+            "firstName": "First Name",
+            "midleName": "Midle Name",
+            "lastName": "Last Name",
+            "dateOfBirth": "Date Of Birth",
+            "gender": "Gender",
+            "address": "Address",
+            "phoneNumber": "Phone Number",
+            "relation": "Relation"
+        }
+    }
+}

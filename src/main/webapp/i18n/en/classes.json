@@ -1,0 +1,27 @@
+
+{
+    "schoolApp": {
+        "classes" : {
+            "home": {
+                "title": "Classes",
+                "createLabel": "Create a new Classes",
+                "createOrEditLabel": "Create or edit a Classes"
+            },
+            "created": "A new Classes is created with identifier {{ param }}",
+            "updated": "A Classes is updated with identifier {{ param }}",
+            "deleted": "A Classes is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Classes {{ id }}?"
+            },
+            "detail": {
+                "title": "Classes"
+            },
+            "numOfStudent": "Num Of Student",
+            "name": "Name",
+            "capacity": "Capacity",
+            "location": "Location",
+            "sDate": "S Date",
+            "eDate": "E Date"
+        }
+    }
+}

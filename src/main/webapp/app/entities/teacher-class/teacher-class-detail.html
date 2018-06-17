@@ -1,0 +1,27 @@
+
+<div>
+    <h2><span data-translate="schoolApp.teacherClass.detail.title">Teacher Class</span> {{vm.teacherClass.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="schoolApp.teacherClass.teacherId">Teacher Id</span></dt>
+        <dd>
+            <span>{{vm.teacherClass.teacherId}}</span>
+        </dd>
+        <dt><span data-translate="schoolApp.teacherClass.classId">Class Id</span></dt>
+        <dd>
+            <span>{{vm.teacherClass.classId}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="teacher-class-detail.edit({id:vm.teacherClass.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

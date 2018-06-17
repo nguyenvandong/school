@@ -1,0 +1,51 @@
+
+<div>
+    <h2><span data-translate="schoolApp.parents.detail.title">Parents</span> {{vm.parents.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="schoolApp.parents.firstName">First Name</span></dt>
+        <dd>
+            <span>{{vm.parents.firstName}}</span>
+        </dd>
+        <dt><span data-translate="schoolApp.parents.midleName">Midle Name</span></dt>
+        <dd>
+            <span>{{vm.parents.midleName}}</span>
+        </dd>
+        <dt><span data-translate="schoolApp.parents.lastName">Last Name</span></dt>
+        <dd>
+            <span>{{vm.parents.lastName}}</span>
+        </dd>
+        <dt><span data-translate="schoolApp.parents.dateOfBirth">Date Of Birth</span></dt>
+        <dd>
+            <span>{{vm.parents.dateOfBirth | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="schoolApp.parents.gender">Gender</span></dt>
+        <dd>
+            <span>{{vm.parents.gender}}</span>
+        </dd>
+        <dt><span data-translate="schoolApp.parents.address">Address</span></dt>
+        <dd>
+            <span>{{vm.parents.address}}</span>
+        </dd>
+        <dt><span data-translate="schoolApp.parents.phoneNumber">Phone Number</span></dt>
+        <dd>
+            <span>{{vm.parents.phoneNumber}}</span>
+        </dd>
+        <dt><span data-translate="schoolApp.parents.relation">Relation</span></dt>
+        <dd>
+            <span>{{vm.parents.relation}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="parents-detail.edit({id:vm.parents.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

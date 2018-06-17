@@ -1,0 +1,23 @@
+
+{
+    "schoolApp": {
+        "teacherClass" : {
+            "home": {
+                "title": "Teacher Classes",
+                "createLabel": "Thêm mới một Teacher Class",
+                "createOrEditLabel": "Thêm mới hoặc cập nhật Teacher Class"
+            },
+            "created": "Một Teacher Class mới được tạo với định danh {{ param }}",
+            "updated": "Một Teacher Class cập nhật với định danh {{ param }}",
+            "deleted": "Một Teacher Class đã xóa với định danh {{ param }}",
+            "delete": {
+                "question": "Bạn có chắc là muốn xóa Teacher Class {{ id }}?"
+            },
+            "detail": {
+                "title": "Teacher Class"
+            },
+            "teacherId": "Teacher Id",
+            "classId": "Class Id"
+        }
+    }
+}

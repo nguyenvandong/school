@@ -1,0 +1,32 @@
+
+{
+    "schoolApp": {
+        "teacher" : {
+            "home": {
+                "title": "Teachers",
+                "createLabel": "Thêm mới một Teacher",
+                "createOrEditLabel": "Thêm mới hoặc cập nhật Teacher"
+            },
+            "created": "Một Teacher mới được tạo với định danh {{ param }}",
+            "updated": "Một Teacher cập nhật với định danh {{ param }}",
+            "deleted": "Một Teacher đã xóa với định danh {{ param }}",
+            "delete": {
+                "question": "Bạn có chắc là muốn xóa Teacher {{ id }}?"
+            },
+            "detail": {
+                "title": "Teacher"
+            },
+            "tid": "Tid",
+            "firstName": "First Name",
+            "middleName": "Middle Name",
+            "lastName": "Last Name",
+            "gender": "Gender",
+            "address": "Address",
+            "dateOfBirth": "Date Of Birth",
+            "dateOfJoin": "Date Of Join",
+            "dateOfLeaving": "Date Of Leaving",
+            "phoneNumber": "Phone Number",
+            "qualification": "Qualification"
+        }
+    }
+}

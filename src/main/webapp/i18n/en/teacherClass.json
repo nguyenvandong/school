@@ -1,0 +1,23 @@
+
+{
+    "schoolApp": {
+        "teacherClass" : {
+            "home": {
+                "title": "Teacher Classes",
+                "createLabel": "Create a new Teacher Class",
+                "createOrEditLabel": "Create or edit a Teacher Class"
+            },
+            "created": "A new Teacher Class is created with identifier {{ param }}",
+            "updated": "A Teacher Class is updated with identifier {{ param }}",
+            "deleted": "A Teacher Class is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Teacher Class {{ id }}?"
+            },
+            "detail": {
+                "title": "Teacher Class"
+            },
+            "teacherId": "Teacher Id",
+            "classId": "Class Id"
+        }
+    }
+}

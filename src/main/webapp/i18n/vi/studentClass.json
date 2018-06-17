@@ -1,0 +1,23 @@
+
+{
+    "schoolApp": {
+        "studentClass" : {
+            "home": {
+                "title": "Student Classes",
+                "createLabel": "Thêm mới một Student Class",
+                "createOrEditLabel": "Thêm mới hoặc cập nhật Student Class"
+            },
+            "created": "Một Student Class mới được tạo với định danh {{ param }}",
+            "updated": "Một Student Class cập nhật với định danh {{ param }}",
+            "deleted": "Một Student Class đã xóa với định danh {{ param }}",
+            "delete": {
+                "question": "Bạn có chắc là muốn xóa Student Class {{ id }}?"
+            },
+            "detail": {
+                "title": "Student Class"
+            },
+            "studentId": "Student Id",
+            "classId": "Class Id"
+        }
+    }
+}

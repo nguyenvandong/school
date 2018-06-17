@@ -1,0 +1,24 @@
+
+{
+    "schoolApp": {
+        "teacherAttendance" : {
+            "home": {
+                "title": "Teacher Attendances",
+                "createLabel": "Create a new Teacher Attendance",
+                "createOrEditLabel": "Create or edit a Teacher Attendance"
+            },
+            "created": "A new Teacher Attendance is created with identifier {{ param }}",
+            "updated": "A Teacher Attendance is updated with identifier {{ param }}",
+            "deleted": "A Teacher Attendance is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Teacher Attendance {{ id }}?"
+            },
+            "detail": {
+                "title": "Teacher Attendance"
+            },
+            "dateAttendance": "Date Attendance",
+            "reason": "Reason",
+            "teacherId": "Teacher Id"
+        }
+    }
+}

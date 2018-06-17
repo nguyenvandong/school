@@ -1,0 +1,63 @@
+
+<div>
+    <h2><span data-translate="schoolApp.teacher.detail.title">Teacher</span> {{vm.teacher.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="schoolApp.teacher.tid">Tid</span></dt>
+        <dd>
+            <span>{{vm.teacher.tid}}</span>
+        </dd>
+        <dt><span data-translate="schoolApp.teacher.firstName">First Name</span></dt>
+        <dd>
+            <span>{{vm.teacher.firstName}}</span>
+        </dd>
+        <dt><span data-translate="schoolApp.teacher.middleName">Middle Name</span></dt>
+        <dd>
+            <span>{{vm.teacher.middleName}}</span>
+        </dd>
+        <dt><span data-translate="schoolApp.teacher.lastName">Last Name</span></dt>
+        <dd>
+            <span>{{vm.teacher.lastName}}</span>
+        </dd>
+        <dt><span data-translate="schoolApp.teacher.gender">Gender</span></dt>
+        <dd>
+            <span>{{vm.teacher.gender}}</span>
+        </dd>
+        <dt><span data-translate="schoolApp.teacher.address">Address</span></dt>
+        <dd>
+            <span>{{vm.teacher.address}}</span>
+        </dd>
+        <dt><span data-translate="schoolApp.teacher.dateOfBirth">Date Of Birth</span></dt>
+        <dd>
+            <span>{{vm.teacher.dateOfBirth | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="schoolApp.teacher.dateOfJoin">Date Of Join</span></dt>
+        <dd>
+            <span>{{vm.teacher.dateOfJoin | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="schoolApp.teacher.dateOfLeaving">Date Of Leaving</span></dt>
+        <dd>
+            <span>{{vm.teacher.dateOfLeaving | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="schoolApp.teacher.phoneNumber">Phone Number</span></dt>
+        <dd>
+            <span>{{vm.teacher.phoneNumber}}</span>
+        </dd>
+        <dt><span data-translate="schoolApp.teacher.qualification">Qualification</span></dt>
+        <dd>
+            <span>{{vm.teacher.qualification}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="teacher-detail.edit({id:vm.teacher.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

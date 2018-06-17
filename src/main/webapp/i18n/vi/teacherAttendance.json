@@ -1,0 +1,24 @@
+
+{
+    "schoolApp": {
+        "teacherAttendance" : {
+            "home": {
+                "title": "Teacher Attendances",
+                "createLabel": "Thêm mới một Teacher Attendance",
+                "createOrEditLabel": "Thêm mới hoặc cập nhật Teacher Attendance"
+            },
+            "created": "Một Teacher Attendance mới được tạo với định danh {{ param }}",
+            "updated": "Một Teacher Attendance cập nhật với định danh {{ param }}",
+            "deleted": "Một Teacher Attendance đã xóa với định danh {{ param }}",
+            "delete": {
+                "question": "Bạn có chắc là muốn xóa Teacher Attendance {{ id }}?"
+            },
+            "detail": {
+                "title": "Teacher Attendance"
+            },
+            "dateAttendance": "Date Attendance",
+            "reason": "Reason",
+            "teacherId": "Teacher Id"
+        }
+    }
+}

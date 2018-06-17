@@ -1,0 +1,27 @@
+
+{
+    "schoolApp": {
+        "classes" : {
+            "home": {
+                "title": "Classes",
+                "createLabel": "Thêm mới một Classes",
+                "createOrEditLabel": "Thêm mới hoặc cập nhật Classes"
+            },
+            "created": "Một Classes mới được tạo với định danh {{ param }}",
+            "updated": "Một Classes cập nhật với định danh {{ param }}",
+            "deleted": "Một Classes đã xóa với định danh {{ param }}",
+            "delete": {
+                "question": "Bạn có chắc là muốn xóa Classes {{ id }}?"
+            },
+            "detail": {
+                "title": "Classes"
+            },
+            "numOfStudent": "Num Of Student",
+            "name": "Name",
+            "capacity": "Capacity",
+            "location": "Location",
+            "sDate": "S Date",
+            "eDate": "E Date"
+        }
+    }
+}

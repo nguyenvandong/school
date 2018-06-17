@@ -1,0 +1,29 @@
+
+{
+    "schoolApp": {
+        "parents" : {
+            "home": {
+                "title": "Parents",
+                "createLabel": "Create a new Parents",
+                "createOrEditLabel": "Create or edit a Parents"
+            },
+            "created": "A new Parents is created with identifier {{ param }}",
+            "updated": "A Parents is updated with identifier {{ param }}",
+            "deleted": "A Parents is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Parents {{ id }}?"
+            },
+            "detail": {
+                "title": "Parents"
+            },
+            "firstName": "First Name",
+            "midleName": "Midle Name",
+            "lastName": "Last Name",
+            "dateOfBirth": "Date Of Birth",
+            "gender": "Gender",
+            "address": "Address",
+            "phoneNumber": "Phone Number",
+            "relation": "Relation"
+        }
+    }
+}

@@ -1,0 +1,27 @@
+
+{
+    "schoolApp": {
+        "student" : {
+            "home": {
+                "title": "Students",
+                "createLabel": "Thêm mới một Student",
+                "createOrEditLabel": "Thêm mới hoặc cập nhật Student"
+            },
+            "created": "Một Student mới được tạo với định danh {{ param }}",
+            "updated": "Một Student cập nhật với định danh {{ param }}",
+            "deleted": "Một Student đã xóa với định danh {{ param }}",
+            "delete": {
+                "question": "Bạn có chắc là muốn xóa Student {{ id }}?"
+            },
+            "detail": {
+                "title": "Student"
+            },
+            "firstName": "First Name",
+            "midleName": "Midle Name",
+            "lastName": "Last Name",
+            "dateOfBirth": "Date Of Birth",
+            "gender": "Gender",
+            "dateOfJoin": "Date Of Join"
+        }
+    }
+}
