@@ -16,6 +16,7 @@
             "detail": {
                 "title": "Student"
             },
+            "name": "Họ tên",
             "firstName": "First Name",
             "midleName": "Midle Name",
             "lastName": "Last Name",

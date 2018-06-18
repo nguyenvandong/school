@@ -92,6 +92,7 @@ public class ClassesResource {
     @Timed
     public ResponseEntity<List<Classes>> getAllClasses(Pageable pageable) {
         log.debug("REST request to get a page of Classes");
+        System.out.println(Integer.MAX_VALUE);
         Page<Classes> page = classesService.findAll(pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/classes");
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);

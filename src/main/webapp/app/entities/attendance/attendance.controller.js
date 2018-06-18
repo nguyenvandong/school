@@ -1,60 +1,87 @@
-(function() {
+(function () {
     'use strict';
 
     angular
         .module('schoolApp')
         .controller('AttendanceController', AttendanceController);
 
-    AttendanceController.$inject = ['$state', 'Attendance', 'ParseLinks', 'AlertService', 'paginationConstants', 'pagingParams'];
+    AttendanceController.$inject = ['$state', 'Attendance', 'ParseLinks', 'AlertService', 'paginationConstants', 'pagingParams', 'Classes'];
 
-    function AttendanceController($state, Attendance, ParseLinks, AlertService, paginationConstants, pagingParams) {
+    function AttendanceController($state, Attendance, ParseLinks, AlertService, paginationConstants, pagingParams, Classes) {
 
         var vm = this;
+        vm.getAllClass = getAllClass;
+        vm.getStudentInClass = getStudentInClass;
+        vm.changeClass = changeClass;
+        vm.getDaysInMonth = getDaysInMonth;
+        vm.getDayString = getDayString;
+        vm.save = save;
 
-        vm.loadPage = loadPage;
-        vm.predicate = pagingParams.predicate;
-        vm.reverse = pagingParams.ascending;
-        vm.transition = transition;
-        vm.itemsPerPage = paginationConstants.itemsPerPage;
+        vm.classes = [];
+        vm.class = null;
+        vm.classId = null;
+        vm.lstStudent = [];
+        vm.lstDay = [];
 
-        loadAll();
+        getAllClass();
 
-        function loadAll () {
-            Attendance.query({
-                page: pagingParams.page - 1,
-                size: vm.itemsPerPage,
-                sort: sort()
+        var toDay = new Date();
+        vm.lstDay = getDaysInMonth(toDay.getMonth(), toDay.getYear());
+        console.log(vm.lstDay);
+
+        function getAllClass() {
+            Classes.query({
+                page: 0,
+                size: 10000,
+                sort: ['name', 'asc']
             }, onSuccess, onError);
-            function sort() {
-                var result = [vm.predicate + ',' + (vm.reverse ? 'asc' : 'desc')];
-                if (vm.predicate !== 'id') {
-                    result.push('id');
-                }
-                return result;
+
+            function onSuccess(data) {
+                vm.classes = data;
             }
-            function onSuccess(data, headers) {
-                vm.links = ParseLinks.parse(headers('link'));
-                vm.totalItems = headers('X-Total-Count');
-                vm.queryCount = vm.totalItems;
-                vm.attendances = data;
-                vm.page = pagingParams.page;
-            }
+
             function onError(error) {
                 AlertService.error(error.data.message);
             }
         }
 
-        function loadPage(page) {
-            vm.page = page;
-            vm.transition();
+        function getStudentInClass(classId) {
+            Classes.get({id: classId}, onSuccess, onError);
+            function onSuccess(data) {
+                vm.class = data;
+                console.log(vm.class);
+            }
+
+            function onError(error) {
+                AlertService.error(error.data.message);
+            }
         }
 
-        function transition() {
-            $state.transitionTo($state.$current, {
-                page: vm.page,
-                sort: vm.predicate + ',' + (vm.reverse ? 'asc' : 'desc'),
-                search: vm.currentSearch
-            });
+        function changeClass() {
+            if (vm.classId !== null) {
+                getStudentInClass(vm.classId);
+            }
         }
+
+        function getDaysInMonth(month, year) {
+            // Since no month has fewer than 28 days
+            var date = new Date(year, month, 1);
+            var days = [];
+            while (date.getMonth() === month) {
+                days.push(new Date(date));
+                date.setDate(date.getDate() + 1);
+            }
+            return days;
+        }
+
+        function getDayString(day) {
+            var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+            return days[day];
+        }
+
+        function save(){
+            console.log("asdfasdf");
+        }
+
     }
 })();
