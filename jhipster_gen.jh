@@ -70,6 +70,10 @@ relationship ManyToOne {
     TeacherAttendance{teacherId} to Teacher
 }
 
+relationship OneToMany {
+    Student{attendance} to Attendance{student}
+}
+
 //relationship OneToMany {
 // 	Student to StudentClass{studentId}
 //    Student to Attendance{studentId}
