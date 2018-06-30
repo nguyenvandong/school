@@ -16,13 +16,13 @@
             "detail": {
                 "title": "Student"
             },
-            "name": "Name",
             "firstName": "First Name",
             "midleName": "Midle Name",
             "lastName": "Last Name",
             "dateOfBirth": "Date Of Birth",
             "gender": "Gender",
-            "dateOfJoin": "Date Of Join"
+            "dateOfJoin": "Date Of Join",
+            "attendance": "Attendance"
         }
     }
 }

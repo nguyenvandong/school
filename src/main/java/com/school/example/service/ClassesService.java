@@ -1,8 +1,11 @@
 package com.school.example.service;
 
 import com.school.example.domain.Classes;
+import com.school.example.domain.Student;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+
+import java.util.List;
 
 /**
  * Service Interface for managing Classes.
@@ -39,4 +42,6 @@ public interface ClassesService {
      * @param id the id of the entity
      */
     void delete(Long id);
+
+    List<Student> getListStudentInClass(Long classId);
 }

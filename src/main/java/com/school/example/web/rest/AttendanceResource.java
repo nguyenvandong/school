@@ -2,10 +2,14 @@ package com.school.example.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
 import com.school.example.domain.Attendance;
+import com.school.example.domain.Student;
 import com.school.example.service.AttendanceService;
+import com.school.example.service.ClassesService;
+import com.school.example.service.dto.Datatable;
 import com.school.example.web.rest.errors.BadRequestAlertException;
 import com.school.example.web.rest.util.HeaderUtil;
 import com.school.example.web.rest.util.PaginationUtil;
+import com.school.example.web.rest.vm.PageableVM;
 import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,7 +23,6 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -35,9 +38,11 @@ public class AttendanceResource {
     private static final String ENTITY_NAME = "attendance";
 
     private final AttendanceService attendanceService;
+    private final ClassesService classesService;
 
-    public AttendanceResource(AttendanceService attendanceService) {
+    public AttendanceResource(AttendanceService attendanceService, ClassesService classesService) {
         this.attendanceService = attendanceService;
+        this.classesService = classesService;
     }
 
     /**
@@ -123,5 +128,13 @@ public class AttendanceResource {
         log.debug("REST request to delete Attendance : {}", id);
         attendanceService.delete(id);
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
+    }
+
+    @RequestMapping(value = "/attendances/get-students-in-class", method = RequestMethod.POST)
+    public ResponseEntity<Datatable> getStudentInClass(@RequestBody PageableVM vm) {
+        List<Student> students = classesService.getListStudentInClass(vm.getClassId());
+        Datatable datatable = new Datatable(vm.getDraw(), students.size(), students);
+        return new ResponseEntity<>(datatable, HttpStatus.OK);
+
     }
 }

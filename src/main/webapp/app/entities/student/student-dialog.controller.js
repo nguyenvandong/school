@@ -5,9 +5,9 @@
         .module('schoolApp')
         .controller('StudentDialogController', StudentDialogController);
 
-    StudentDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Student'];
+    StudentDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Student', 'Attendance'];
 
-    function StudentDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Student) {
+    function StudentDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Student, Attendance) {
         var vm = this;
 
         vm.student = entity;
@@ -15,6 +15,7 @@
         vm.datePickerOpenStatus = {};
         vm.openCalendar = openCalendar;
         vm.save = save;
+        vm.attendances = Attendance.query();
 
         $timeout(function (){
             angular.element('.form-group:eq(1)>input').focus();

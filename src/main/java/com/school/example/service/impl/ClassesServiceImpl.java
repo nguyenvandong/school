@@ -1,5 +1,6 @@
 package com.school.example.service.impl;
 
+import com.school.example.domain.Student;
 import com.school.example.service.ClassesService;
 import com.school.example.domain.Classes;
 import com.school.example.repository.ClassesRepository;
@@ -9,6 +10,9 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -74,4 +78,20 @@ public class ClassesServiceImpl implements ClassesService {
         log.debug("Request to delete Classes : {}", id);
         classesRepository.delete(id);
     }
+
+    @Override
+    public List<Student> getListStudentInClass(Long classId) {
+        List<Student> students = new ArrayList<>();
+        try {
+            Classes classes = findOne(classId);
+            if(classes != null){
+                students.addAll(classes.getStudents());
+            }
+        } catch (Exception e) {
+            log.error(e.getMessage(), e);
+        }
+        return students;
+    }
+
+
 }

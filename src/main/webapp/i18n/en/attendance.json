@@ -17,7 +17,8 @@
                 "title": "Attendance"
             },
             "dateAttendance": "Date Attendance",
-            "reason": "Reason"
+            "reason": "Reason",
+            "student": "Student"
         }
     }
 }

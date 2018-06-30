@@ -36,6 +36,12 @@
             </div>
         </div>
 
+        <div class="form-group">
+            <label data-translate="schoolApp.attendance.student" for="field_student">Student</label>
+            <select class="form-control" id="field_student" name="student" ng-model="vm.attendance.student" ng-options="student as student.id for student in vm.students track by student.id">
+                <option value=""></option>
+            </select>
+        </div>
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">

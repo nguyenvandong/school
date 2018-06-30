@@ -1,9 +1,9 @@
 package com.school.example.domain;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
-import javax.validation.constraints.*;
-
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.HashSet;
@@ -46,21 +46,17 @@ public class Student implements Serializable {
     @Column(name = "date_of_join")
     private LocalDate dateOfJoin;
 
-    @ManyToMany(cascade = { CascadeType.ALL })
+    @OneToMany(mappedBy = "student", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JsonManagedReference
+    private Set<Attendance> attendances = new HashSet<>();
+
+    @ManyToMany(cascade = {CascadeType.ALL})
     @JoinTable(
         name = "student_class",
-        joinColumns = { @JoinColumn(name = "student_id") },
-        inverseJoinColumns = { @JoinColumn(name = "class_id") }
+        joinColumns = {@JoinColumn(name = "student_id")},
+        inverseJoinColumns = {@JoinColumn(name = "class_id")}
     )
     Set<Classes> classes = new HashSet<>();
-
-    public Set<Classes> getClasses() {
-        return classes;
-    }
-
-    public void setClasses(Set<Classes> classes) {
-        this.classes = classes;
-    }
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -147,6 +143,39 @@ public class Student implements Serializable {
 
     public void setDateOfJoin(LocalDate dateOfJoin) {
         this.dateOfJoin = dateOfJoin;
+    }
+
+    public Set<Attendance> getAttendances() {
+        return attendances;
+    }
+
+    public Student attendances(Set<Attendance> attendances) {
+        this.attendances = attendances;
+        return this;
+    }
+
+    public Student addAttendance(Attendance attendance) {
+        this.attendances.add(attendance);
+        attendance.setStudent(this);
+        return this;
+    }
+
+    public Student removeAttendance(Attendance attendance) {
+        this.attendances.remove(attendance);
+        attendance.setStudent(null);
+        return this;
+    }
+
+    public void setAttendances(Set<Attendance> attendances) {
+        this.attendances = attendances;
+    }
+
+    public Set<Classes> getClasses() {
+        return classes;
+    }
+
+    public void setClasses(Set<Classes> classes) {
+        this.classes = classes;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

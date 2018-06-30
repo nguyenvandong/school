@@ -46,7 +46,6 @@
                 }],
                 translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
                     $translatePartialLoader.addPart('attendance');
-                    $translatePartialLoader.addPart('student');
                     $translatePartialLoader.addPart('global');
                     return $translate.refresh();
                 }]

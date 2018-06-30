@@ -5,9 +5,9 @@
         .module('schoolApp')
         .controller('AttendanceDetailController', AttendanceDetailController);
 
-    AttendanceDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Attendance'];
+    AttendanceDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Attendance', 'Student'];
 
-    function AttendanceDetailController($scope, $rootScope, $stateParams, previousState, entity, Attendance) {
+    function AttendanceDetailController($scope, $rootScope, $stateParams, previousState, entity, Attendance, Student) {
         var vm = this;
 
         vm.attendance = entity;

@@ -22,27 +22,58 @@
         </div>
     </div>
     <br/>
-    <div class="zui-wrapper">
-        <div class="table-responsive zui-scroller">
-            <form>
-                <table class="table table-striped table-bordered table-hover table-fix-width-first-col zui-table">
-                    <thead>
-                    <tr>
-                        <th class="text-center zui-sticky-col"><span data-translate="schoolApp.student.name">Name</span></th>
-                        <th ng-repeat="day in vm.lstDay" class="text-center">{{vm.getDayString(day.getDay())}} <br/> {{day.getDate()}}</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr ng-repeat="student in vm.class.students track by student.id">
-                        <td style="display: none;">{{student.id}}</td>
-                        <td class="zui-sticky-col">{{student.firstName}} {{student.midleName}} {{student.lastName}}</td>
-                        <td class="text-center" ng-repeat="day in vm.lstDay">
-                            <input type="checkbox" ng-model=""/>
-                        </td>
-                    </tbody>
-                </table>
-            </form>
-        </div>
+    <br/>
+    <!--<div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="dateAttendance"><span data-translate="schoolApp.attendance.dateAttendance">Date Attendance</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="reason"><span data-translate="schoolApp.attendance.reason">Reason</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="student.id"><span data-translate="schoolApp.attendance.student">Student</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="attendance in vm.attendances track by attendance.id">
+                    <td><a ui-sref="attendance-detail({id:attendance.id})">{{attendance.id}}</a></td>
+                        <td>{{attendance.dateAttendance | date:'mediumDate'}}</td>
+                    <td>{{attendance.reason}}</td>
+                    <td>
+                        <a ui-sref="student-detail({id:attendance.student.id})">{{attendance.student.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="attendance-detail({id:attendance.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="attendance.edit({id:attendance.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="attendance.delete({id:attendance.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>-->
+    <div class="row">
+        <table class="table cell-border" id="tableStudent">
+            <tbody>
+
+            </tbody>
+        </table>
     </div>
     <br/>
     <div class="row">
